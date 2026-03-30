@@ -141,7 +141,11 @@
       border: 1px solid var(--border);
       border-radius: 50px; color: var(--gold);
       background: rgba(201,168,76,0.07);
+      text-decoration: none; cursor: default;
     }
+    a.badge { cursor: pointer; transition: background var(--transition), border-color var(--transition); }
+    a.badge:hover { background: rgba(201,168,76,0.18); border-color: var(--gold); }
+    .badge--anthropic { border-color: var(--gold); background: rgba(201,168,76,0.14); }
     .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
     .btn-primary {
       display: inline-flex; align-items: center; gap: 0.5rem;
@@ -324,7 +328,17 @@
     .cert-card:hover { transform: translateY(-3px); border-color: var(--gold); }
     .cert-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
     .cert-name { font-weight: 600; color: var(--white); font-size: 0.9rem; margin-bottom: 0.2rem; }
-    .cert-org { font-size: 0.78rem; color: var(--muted); }
+    .cert-org { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.6rem; }
+    .cert-view {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      font-size: 0.73rem; font-weight: 600; letter-spacing: 0.06em;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid var(--gold);
+      border-radius: 20px; padding: 0.2rem 0.7rem;
+      transition: background var(--transition), color var(--transition);
+    }
+    .cert-view:hover { background: var(--gold); color: var(--navy-dark); }
+    .cert-view svg { width: 11px; height: 11px; stroke: currentColor; flex-shrink: 0; }
 
     /* ── Contact ── */
     #contact {
@@ -409,6 +423,7 @@
       deployments on AWS &amp; Azure — delivering FedRAMP-compliant, zero-downtime infrastructure at scale.
     </p>
     <div class="hero-badges">
+      <a class="badge badge--anthropic" href="https://verify.skilljar.com/c/d479fsz49zym" target="_blank" rel="noopener">✦ Claude Code Certified — Anthropic</a>
       <span class="badge">CKA Certified</span>
       <span class="badge">AZ-900 Certified</span>
       <span class="badge">AWS EKS</span>
@@ -444,8 +459,8 @@
           intersection of automation, security, and reliability.
         </p>
         <p>
-          At Ivanti Technologies, I architect multi-cloud environments on AWS and Azure, drive
-          FedRAMP compliance across SaaS products, and champion shift-left security practices —
+          At Ivanti Technologies, I work with multi-cloud environments on AWS and Azure, drive
+          FedRAMP compliance across SaaS product, and champion shift-left security practices —
           neutralizing 250+ vulnerabilities while keeping deployment pipelines fast and reliable.
         </p>
         <p>
@@ -484,13 +499,8 @@
         <div class="skill-group-icon">☁️</div>
         <div class="skill-group-title">Cloud Platforms</div>
         <div class="skill-tags">
-          <span class="skill-tag">AWS EKS</span>
-          <span class="skill-tag">EC2</span>
-          <span class="skill-tag">ECR</span>
-          <span class="skill-tag">S3</span>
-          <span class="skill-tag">CloudFormation</span>
-          <span class="skill-tag">Azure AKS</span>
-          <span class="skill-tag">Blob Storage</span>
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">Azure</span>
         </div>
       </div>
 
@@ -502,7 +512,6 @@
           <span class="skill-tag">Docker</span>
           <span class="skill-tag">Amazon EKS</span>
           <span class="skill-tag">Azure AKS</span>
-          <span class="skill-tag">Helm</span>
         </div>
       </div>
 
@@ -523,7 +532,6 @@
           <span class="skill-tag">New Relic</span>
           <span class="skill-tag">Grafana</span>
           <span class="skill-tag">Prometheus</span>
-          <span class="skill-tag">ELK Stack</span>
         </div>
       </div>
 
@@ -531,11 +539,9 @@
         <div class="skill-group-icon">🔒</div>
         <div class="skill-group-title">Security & Compliance</div>
         <div class="skill-tags">
-          <span class="skill-tag">Polaris (SAST)</span>
-          <span class="skill-tag">Black Duck SCA</span>
+          <span class="skill-tag">SAST Tools</span>
           <span class="skill-tag">CSI Secrets Driver</span>
           <span class="skill-tag">FedRAMP</span>
-          <span class="skill-tag">SSL/TLS</span>
         </div>
       </div>
 
@@ -547,9 +553,6 @@
           <span class="skill-tag">Python</span>
           <span class="skill-tag">Java</span>
           <span class="skill-tag">Kotlin</span>
-          <span class="skill-tag">Go Templating</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">HTML/CSS</span>
         </div>
       </div>
 
@@ -625,10 +628,26 @@
         <h3 style="font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:1.2rem;" class="reveal">Certifications</h3>
 
         <div class="cert-card reveal">
+          <div class="cert-icon">🤖</div>
+          <div>
+            <div class="cert-name">Claude Code in Action</div>
+            <div class="cert-org">Anthropic</div>
+            <a class="cert-view" href="https://verify.skilljar.com/c/d479fsz49zym" target="_blank" rel="noopener">
+              View Certificate
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
           <div class="cert-icon">🏆</div>
           <div>
             <div class="cert-name">Certified Kubernetes Administrator (CKA)</div>
             <div class="cert-org">Linux Foundation</div>
+            <a class="cert-view" href="https://www.credly.com/badges/1bf851ce-39ec-4b1e-a406-0247da3d0716/public_url" target="_blank" rel="noopener">
+              View Certificate
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
           </div>
         </div>
 
@@ -637,6 +656,10 @@
           <div>
             <div class="cert-name">Microsoft Certified: Azure Fundamentals (AZ-900)</div>
             <div class="cert-org">Microsoft</div>
+            <a class="cert-view" href="https://learn.microsoft.com/en-in/users/ksujay-5795/credentials/84355018ACBE7B43" target="_blank" rel="noopener">
+              View Certificate
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
           </div>
         </div>
 
@@ -645,6 +668,10 @@
           <div>
             <div class="cert-name">NPTEL Elite + Silver — 89%</div>
             <div class="cert-org">Data Science for Engineers &amp; Joy of Computing using Python</div>
+            <a class="cert-view" href="https://drive.google.com/file/d/1bsqHfnlA3IjzWztOC0I8Jd3qnhMbloDT/view?usp=sharing" target="_blank" rel="noopener">
+              View Certificate
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
           </div>
         </div>
       </div>
